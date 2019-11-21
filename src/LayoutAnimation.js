@@ -15,7 +15,7 @@ export default () => {
     //LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
       LayoutAnimation.configureNext(
         LayoutAnimation.create(
-          1000,
+          500,
           LayoutAnimation.Types.easeIn,
           LayoutAnimation.Properties.scaleXY,
         ),
@@ -23,7 +23,7 @@ export default () => {
     setAnimate(!animate);
   }
   return (
-    <SafeAreaView style={{flex:1}}>  
+    <SafeAreaView style={{flex:1, alignItems:'center'}}>  
       <View style={styles.container}>
       {animate &&
         <View style={styles.view1}><Text>1</Text></View>
@@ -34,7 +34,9 @@ export default () => {
       }
         <View style={styles.view4}><Text>4</Text></View>
       </View>
-      <Text onPress={Animate} style={styles.button}>Animame!!!!</Text>
+      <View onPress={Animate} style={styles.button}>
+        <Text style={styles.textButton}>Animame!!!!</Text>
+      </View>
       </SafeAreaView>  
   
   );
@@ -63,14 +65,17 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: 'blue',
-    color: 'white',
     padding: 16,
     fontSize: 20,
     borderRadius:50,
-    textAlign:'center',
     position:'absolute',
     bottom:16,
+    alignItems:'center',
     width:'90%'
+  },
+  textButton: {
+    textAlign:'center',
+    color: 'white',
   }
 }); 
 
