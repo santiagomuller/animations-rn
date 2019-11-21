@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet,SafeAreaView, LayoutAnimation, Platform, UIManager} from 'react-native';
+import {View, Text, StyleSheet,SafeAreaView, LayoutAnimation, TouchableOpacity, Platform, UIManager} from 'react-native';
+
 if (
   Platform.OS === 'android' &&
   UIManager.setLayoutAnimationEnabledExperimental
@@ -34,9 +35,9 @@ export default () => {
       }
         <View style={styles.view4}><Text>4</Text></View>
       </View>
-      <View onPress={Animate} style={styles.button}>
+      <TouchableOpacity onPress={Animate} style={styles.button}>
         <Text style={styles.textButton}>Animame!!!!</Text>
-      </View>
+      </TouchableOpacity>
       </SafeAreaView>  
   
   );
